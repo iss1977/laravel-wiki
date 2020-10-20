@@ -15,21 +15,10 @@ class CreateCategoriesTable extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->string('username',50);
-            $table->string('password', 100);
-            $table->string('lastname',50);
-            $table->string('firstname',50);
-            $table->string('address',200);
-            $table->timestamp('added_on', 0);
-
+            $table->string('title',200);
+            $table->timestamps();
             
             
-            
-            
-
-
-
-            // $table->foreignId('category_id')->constrained('categories');
         });
     }
 

@@ -18,14 +18,14 @@ class CreateEntriesTable extends Migration
             $table->string('title',100);
             $table->string('teaser',200);
             $table->text('description');
-            $table->string('img-path',200);
-            $table->unsignedBigInteger('category_id');
-            $table->unsignedBigInteger('user_id');
+            $table->string('img_path',200);
+            // $table->unsignedBigInteger('category_id');
+            // $table->unsignedBigInteger('user_id');
             
             
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('category_id')->references('id')->on('categories');
-            
+            $table->foreignId('user_id')->constrained('users');
+            $table->foreignId('category_id')->constrained('categories');
+            $table->timestamps();
             
             
         });
